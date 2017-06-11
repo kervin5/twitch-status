@@ -1,4 +1,4 @@
-# Twitch Stus
+# Twitch Status
 
 ## Frontend Project - REST API
 
