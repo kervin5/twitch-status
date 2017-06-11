@@ -1,0 +1,1 @@
+function CheckOnlineStatus(){$.ajax({url:"https://api.twitch.tv/kraken/streams/"+nickname,dataType:"json",headers:{"Client-ID":"7buzh4k369ta1n0se34wbn8aj2b7jr"},success:function(n){null===n.stream?alert(nickname+" is not online"):alert(nickname+" is online!")},error:function(n){console.log(n)}})}var nickname="noobs2ninjas";CheckOnlineStatus();
