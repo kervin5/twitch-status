@@ -1,1 +1,47 @@
-/*test*/
+//General Styling
+
+body {
+  background-color: #111433;
+}
+
+.navbar-inverse {
+  color: white;
+  border-radius: 0;
+  border: none;
+  background: rgba(2,7,38,1);
+  background: -moz-linear-gradient(left, rgba(2,7,38,1) 0%, rgba(33,38,78,1) 51%, rgba(2,7,38,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(2,7,38,1)), color-stop(51%, rgba(33,38,78,1)), color-stop(100%, rgba(2,7,38,1)));
+  background: -webkit-linear-gradient(left, rgba(2,7,38,1) 0%, rgba(33,38,78,1) 51%, rgba(2,7,38,1) 100%);
+  background: -o-linear-gradient(left, rgba(2,7,38,1) 0%, rgba(33,38,78,1) 51%, rgba(2,7,38,1) 100%);
+  background: -ms-linear-gradient(left, rgba(2,7,38,1) 0%, rgba(33,38,78,1) 51%, rgba(2,7,38,1) 100%);
+  background: linear-gradient(to right, rgba(2,7,38,1) 0%, rgba(33,38,78,1) 51%, rgba(2,7,38,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020726', endColorstr='#020726', GradientType=1 );
+
+  .navbar-brand {
+    text-transform: uppercase;
+    font-family: 'Bungee Inline', cursive;
+    color: white;
+
+    span,.fa {
+      background: -moz-linear-gradient(270deg, #BD3C6B 0%, #5831a8 100%); /* ff3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #BD3C6B), color-stop(100%, #5831a8)); /* safari4+,chrome */
+      background: -webkit-linear-gradient(270deg, #BD3C6B 0%, #5831a8 100%); /* safari5.1+,chrome10+ */
+      background: -o-linear-gradient(270deg, #BD3C6B 0%, #5831a8 100%); /* opera 11.10+ */
+      background: -ms-linear-gradient(270deg, #BD3C6B 0%, #5831a8 100%); /* ie10+ */
+      background: linear-gradient(180deg, #BD3C6B 0%, #5831a8 100%); /* w3c */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BD3C6B', endColorstr='#5831a8',GradientType=0 ); /* ie6-9 */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .fa {
+      font-size: 1.2em;
+    }
+  }
+
+  .fa {
+    color: white;
+    font-size: 1.3em;
+  }
+}
+
