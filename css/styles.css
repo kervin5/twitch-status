@@ -7,5 +7,6 @@ body { background-color: #111433; }
 .navbar-inverse .navbar-right > li { font-size: 1.2em; display: inline-block; }
 
 .filters { text-align: center; }
-.filters .filter { background-color: #2C7C91; border: 1px solid black; }
-.filters .filter .fa { color: white; font-size: 1.5em; }
+.filters .filter { background-color: #2C7C91; border: 1px solid black; padding: 5px; -webkit-transition: 1s; transition: 1s; color: white; }
+.filters .filter .fa { font-size: 1.5em; }
+.filters .filter p { margin-bottom: 0px; }
