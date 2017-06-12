@@ -24,4 +24,4 @@ function CheckOnlineStatus()
     });
 }
 
-CheckOnlineStatus();
+//CheckOnlineStatus();
