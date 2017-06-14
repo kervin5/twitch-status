@@ -6,7 +6,7 @@ var nickname = "streamerhouse";
 function CheckOnlineStatus()
 {
     $.ajax({
-        url: "https://api.twitch.tv/kraken/streams/"+nickname,
+        url: "https://api.twitch.tv/kraken/channels/"+nickname,
         dataType: 'json',
         headers: {
             'Client-ID': "7buzh4k369ta1n0se34wbn8aj2b7jr"
@@ -23,5 +23,4 @@ function CheckOnlineStatus()
         console.log("Error",data);
     });
 }
-
-//CheckOnlineStatus();
+CheckOnlineStatus();
