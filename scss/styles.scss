@@ -45,11 +45,22 @@ body {
   }
 
   .navbar-right {
+    margin-right: 10px;
     &>li {
+      border-bottom: 3px solid transparent;
+      margin-bottom:-3px;
       font-size: 1.2em;
+      box-sizing: border-box;
       display: inline-block;
+      transition: 0.5s;
+      &:hover {
+        margin-bottom:-3px;
+        border-bottom: 3px solid #BD3C6B;
+      }
     }
   }
+
+
 }
 //Filter bar Styling
 
