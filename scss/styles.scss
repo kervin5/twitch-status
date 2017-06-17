@@ -111,3 +111,19 @@ body {
     z-index: 2;
   }
 }
+
+#channels-container {
+  #channels {
+    &>div {
+      padding: 20px;
+      .channel-container {
+        background-color: white;
+        width: 100%;
+        height: 300px;
+        margin: auto;
+        counter-reset:red;
+      }
+    }
+
+  }
+}

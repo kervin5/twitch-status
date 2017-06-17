@@ -16,3 +16,6 @@ body { background-color: #090b24; }
 .filters .filter:last-child { border-left: 1px solid #0a2e68; border-right: none; }
 .filters .filter:hover { z-index: 3; -webkit-transform: scale(1.1, 1.1); transform: scale(1.1, 1.1); -webkit-transition: boder 0.1s; transition: boder 0.1s; border: none; box-shadow: -1px 2px 20px 9px rgba(0, 0, 0, 0.5); }
 .filters .active { background: -webkit-linear-gradient(top, #ff2162 1000%, #ff2162 100%); background: linear-gradient(top, #ff2162 1000%, #ff2162 100%); box-shadow: -1px 2px 20px 9px rgba(0, 0, 0, 0.5); z-index: 2; }
+
+#channels-container #channels > div { padding: 20px; }
+#channels-container #channels > div .channel-container { background-color: white; width: 100%; height: 300px; margin: auto; counter-reset: red; }
