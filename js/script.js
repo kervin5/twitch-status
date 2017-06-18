@@ -89,3 +89,17 @@ function getChannels(channels) {
 }
 
 getChannels(channels);
+
+$("#online-btn").click(function () {
+    $(".online-channel").parent().show();
+    $(".offline-channel").parent().hide();
+});
+
+$("#offline-btn").click(function () {
+    $(".offline-channel").parent().show();
+    $(".online-channel").parent().hide();
+});
+
+$("#all-btn").click(function () {
+    $(".channel-container").parent().show();
+});
