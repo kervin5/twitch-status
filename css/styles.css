@@ -12,7 +12,9 @@ body { background-color: #090b24; }
 
 #search-form { padding-left: 0; }
 #search-form .add-on { position: absolute; left: 0; }
-#search-form .glyphicon-search { color: #BD3C6B; }
+#search-form .glyphicon { color: #BD3C6B; }
+#search-form .clear-btn { display: none; }
+#search-form .search-btn button, #search-form .clear-btn button { border-bottom-left-radius: 0 !important; border-top-left-radius: 0 !important; }
 
 @media (max-width: 768px) { #search-form .add-on { width: 95%; left: 2.5%; }
   .filter { margin-top: 40px !important; } }

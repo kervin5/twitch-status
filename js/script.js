@@ -22,7 +22,9 @@ function displayChannel(channelRes) {
     channelRow = channelRow.replace("%id%",channelRes.display_name);
 
     channelInfo = channelInfo.replace("%name%",channelRes.display_name);
+
     channelInfo = channelInfo.replace("%url%",channelRes.url);
+
 
     if(channelRes.status) {
         channelInfo = channelInfo.replace("%detail%",channelRes.status);
@@ -33,6 +35,13 @@ function displayChannel(channelRes) {
 
     $("#channels").append(channelRow);
     $("#"+ channelRes.display_name).prepend(channelInfo);
+
+    if(channelRes.url){
+
+    } else {
+        $("#"+ channelRes.display_name).find("a").hide();
+    }
+
 }
 
 function displayStatus(channelStatus, channelName) {
@@ -126,16 +135,29 @@ $("#all-btn").click(function (button) {
 
 
 $( "#search-form" ).submit(function( event ) {
+    //Creates array with search term
     channel = [];
     var query = $("#srch-term").val();
     channel.push(query);
 
+    //Empties current channels
     $("#channels").empty();
+    $(".search-btn").hide();
+    $(".clear-btn").show();
 
+    //Queries channel from input
     getChannels(channel);
 
     console.log(query);
     event.preventDefault();
+});
+
+$(".clear-btn").click(function () {
+    $("#srch-term").val("");
+    $("#channels").empty();
+    $(".search-btn").show();
+    $(".clear-btn").hide();
+    getChannels(channels);
 });
 
 getChannels(channels);

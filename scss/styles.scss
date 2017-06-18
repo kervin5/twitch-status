@@ -70,8 +70,20 @@ body {
     left: 0;
   }
 
-  .glyphicon-search {
+  .glyphicon {
     color: #BD3C6B ;
+  }
+
+  .clear-btn {
+    display: none;
+  }
+
+  .search-btn,.clear-btn {
+    button {
+      border-bottom-left-radius: 0 !important;
+      border-top-left-radius: 0 !important;
+    }
+
   }
 }
 
