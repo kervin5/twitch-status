@@ -31,7 +31,7 @@ h1, h3 { font-family: 'Ubuntu', sans-serif; }
 .filters .filter p { margin-bottom: 0px; }
 .filters .filter:first-child { border-left: none; border-right: 1px solid #0a2e68; }
 .filters .filter:last-child { border-left: 1px solid #0a2e68; border-right: none; }
-.filters .filter:hover { z-index: 3; -webkit-transform: scale(1.1, 1.1); transform: scale(1.1, 1.1); -webkit-transition: boder 0.1s; transition: boder 0.1s; border: none; box-shadow: -1px 2px 20px 9px rgba(0, 0, 0, 0.5); }
+.filters .filter:hover { z-index: 3; -webkit-transform: scale(1.1, 1.1); transform: scale(1.1, 1.1); -webkit-transition: boder 0.1s; transition: boder 0.1s; border: none; box-shadow: -1px 2px 20px 9px rgba(0, 0, 0, 0.5); cursor: pointer; }
 .filters .active { background: -webkit-linear-gradient(top, #f4cb42 60%, #541e00 140%); background: linear-gradient(top, #f4cb42 60%, #541e00 140%); box-shadow: -1px 2px 20px 9px rgba(0, 0, 0, 0.5); z-index: 2; }
 
 #online-btn.active { background: -webkit-linear-gradient(top, #26d8a9 100%, #26d8a9 100%); background: linear-gradient(top, #26d8a9 100%, #26d8a9 100%); }
