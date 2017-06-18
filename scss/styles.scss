@@ -9,6 +9,18 @@ body {
   background-color: #090b24;
 }
 
+main {
+  margin-bottom: 80px;
+}
+
+p,button, input, select, textarea {
+  font-family: 'Cabin', sans-serif !important;
+}
+
+h1,h3 {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 //Navbar Styling
 .navbar-inverse {
   color: white;
@@ -240,6 +252,11 @@ body {
   }
 }
 
+@keyframes online {
+  0%  {background-color: #0e80e7;}
+  100%  {background-color: #26d8a9;}
+}
+
 .online-channel {
   &:hover {
     -webkit-box-shadow: 0px 0px 63px -4px rgba(13,219,154,1);
@@ -249,7 +266,7 @@ body {
   .status-icon {
     padding: 5px 8px;
     border-radius: 50%;
-    background-color:#26d8a9;
+    animation: online linear 0.8s infinite alternate;
   }
 
   .channel-info {
@@ -285,5 +302,39 @@ body {
         text-decoration: none !important;
       }
     }
+  }
+}
+
+@keyframes footer-color {
+  0%   {color: #5831a8;}
+  25%  {color: #0e80e7;}
+  50%  {color: #26d8a9;}
+  100% {color: #ff2162;}
+}
+
+@keyframes name-color {
+  0%   {color: white;}
+  25%  {color: #ffc88e ;}
+  100% {color: #ff2162;}
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(rgb(15, 13, 11),0.4);
+
+  p {
+    margin: 10px auto;
+    font-size: 1.2em;
+
+    a {
+      animation: name-color linear 50s infinite alternate;
+    }
+  }
+
+  .glyphicon {
+    animation: footer-color linear 5s infinite alternate;
   }
 }

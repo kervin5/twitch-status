@@ -2,6 +2,12 @@
 
 body { background-color: #090b24; }
 
+main { margin-bottom: 80px; }
+
+p, button, input, select, textarea { font-family: 'Cabin', sans-serif !important; }
+
+h1, h3 { font-family: 'Ubuntu', sans-serif; }
+
 .navbar-inverse { color: white; border-radius: 0; border: none; white-space: nowrap; word-break: keep-all; background: #020726; background: -webkit-gradient(left top, right top, color-stop(0%, #020726), color-stop(51%, #21264e), color-stop(100%, #020726)); background: -webkit-linear-gradient(left, #020726 0%, #21264e 51%, #020726 100%); background: linear-gradient(to right, #020726 0%, #21264e 51%, #020726 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020726', endColorstr='#020726', GradientType=1 ); }
 .navbar-inverse .navbar-brand { text-transform: uppercase; font-family: 'Bungee Inline', cursive; color: white; }
 .navbar-inverse .navbar-brand span, .navbar-inverse .navbar-brand .fa { background: -webkit-linear-gradient(top, #ff2162 0%, #5831a8 100%); background: linear-gradient(180deg, #ff2162 0%, #5831a8 100%); /* w3c */ -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -48,8 +54,13 @@ body { background-color: #090b24; }
 #channels-container #channels > div .channel-container .channel-info .status-detail p:hover { -webkit-animation-play-state: paused; animation-play-state: paused; }
 #channels-container #channels > div .channel-container .img-responsive { background-color: #0f0c16; margin: auto; }
 
+@-webkit-keyframes online { 0% { background-color: #0e80e7; }
+  100% { background-color: #26d8a9; } }
+
+@keyframes online { 0% { background-color: #0e80e7; }
+  100% { background-color: #26d8a9; } }
 .online-channel:hover { box-shadow: 0px 0px 63px -4px #0ddb9a; }
-.online-channel .status-icon { padding: 5px 8px; border-radius: 50%; background-color: #26d8a9; }
+.online-channel .status-icon { padding: 5px 8px; border-radius: 50%; -webkit-animation: online linear 0.8s infinite alternate; animation: online linear 0.8s infinite alternate; }
 .online-channel .channel-info a { -webkit-transition: 0.2s !important; transition: 0.2s !important; }
 .online-channel .channel-info a:hover { color: #26d8a9 !important; text-decoration: none !important; }
 
@@ -57,3 +68,23 @@ body { background-color: #090b24; }
 .offline-channel .status-icon { padding: 5px 8px; border-radius: 50%; background-color: #ff2162; }
 .offline-channel .channel-info a { -webkit-transition: 0.2s !important; transition: 0.2s !important; }
 .offline-channel .channel-info a:hover { color: #ff2162 !important; text-decoration: none !important; }
+
+@-webkit-keyframes footer-color { 0% { color: #5831a8; }
+  25% { color: #0e80e7; }
+  50% { color: #26d8a9; }
+  100% { color: #ff2162; } }
+
+@keyframes footer-color { 0% { color: #5831a8; }
+  25% { color: #0e80e7; }
+  50% { color: #26d8a9; }
+  100% { color: #ff2162; } }
+@-webkit-keyframes name-color { 0% { color: white; }
+  25% { color: #ffc88e; }
+  100% { color: #ff2162; } }
+@keyframes name-color { 0% { color: white; }
+  25% { color: #ffc88e; }
+  100% { color: #ff2162; } }
+footer { position: fixed; left: 0; right: 0; bottom: 0; background-color: rgba(15, 13, 11, 0.4); }
+footer p { margin: 10px auto; font-size: 1.2em; }
+footer p a { -webkit-animation: name-color linear 50s infinite alternate; animation: name-color linear 50s infinite alternate; }
+footer .glyphicon { -webkit-animation: footer-color linear 5s infinite alternate; animation: footer-color linear 5s infinite alternate; }
