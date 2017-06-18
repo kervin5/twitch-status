@@ -17,7 +17,11 @@ body { background-color: #090b24; }
 .filters .filter:first-child { border-left: none; border-right: 1px solid #0a2e68; }
 .filters .filter:last-child { border-left: 1px solid #0a2e68; border-right: none; }
 .filters .filter:hover { z-index: 3; -webkit-transform: scale(1.1, 1.1); transform: scale(1.1, 1.1); -webkit-transition: boder 0.1s; transition: boder 0.1s; border: none; box-shadow: -1px 2px 20px 9px rgba(0, 0, 0, 0.5); }
-.filters .active { background: -webkit-linear-gradient(top, #ff2162 1000%, #ff2162 100%); background: linear-gradient(top, #ff2162 1000%, #ff2162 100%); box-shadow: -1px 2px 20px 9px rgba(0, 0, 0, 0.5); z-index: 2; }
+.filters .active { background: -webkit-linear-gradient(top, #f4cb42 60%, #541e00 140%); background: linear-gradient(top, #f4cb42 60%, #541e00 140%); box-shadow: -1px 2px 20px 9px rgba(0, 0, 0, 0.5); z-index: 2; }
+
+#online-btn.active { background: -webkit-linear-gradient(top, #26d8a9 100%, #26d8a9 100%); background: linear-gradient(top, #26d8a9 100%, #26d8a9 100%); }
+
+#offline-btn.active { background: -webkit-linear-gradient(top, #ff2162 1000%, #ff2162 100%); background: linear-gradient(top, #ff2162 1000%, #ff2162 100%); }
 
 @-webkit-keyframes marquee { 0% { -webkit-transform: translate(0, 0); transform: translate(0, 0); }
   100% { -webkit-transform: translate(-100%, 0); transform: translate(-100%, 0); } }
@@ -25,7 +29,8 @@ body { background-color: #090b24; }
 @keyframes marquee { 0% { -webkit-transform: translate(0, 0); transform: translate(0, 0); }
   100% { -webkit-transform: translate(-100%, 0); transform: translate(-100%, 0); } }
 #channels-container #channels > div { padding: 20px; }
-#channels-container #channels > div .channel-container { width: 100%; margin: auto; position: relative; overflow: hidden; -webkit-transition: 0.5s; transition: 0.5s; }
+#channels-container #channels > div .channel-container { width: 100%; margin: auto; position: relative; overflow: hidden; -webkit-transition: 0.3s; transition: 0.3s; }
+#channels-container #channels > div .channel-container:hover { -webkit-transform: scale(1.1); transform: scale(1.1); z-index: 100; }
 #channels-container #channels > div .channel-container .status-icon { position: absolute; top: 10px; right: 10px; }
 #channels-container #channels > div .channel-container .channel-info { background-color: rgba(15, 12, 22, 0.5); position: absolute; padding: 10px; bottom: 0; left: 0; right: 0; }
 #channels-container #channels > div .channel-container .channel-info a { color: white; }
@@ -37,6 +42,10 @@ body { background-color: #090b24; }
 
 .online-channel:hover { box-shadow: 0px 0px 63px -4px #0ddb9a; }
 .online-channel .status-icon { padding: 5px 8px; border-radius: 50%; background-color: #26d8a9; }
+.online-channel .channel-info a { -webkit-transition: 0.2s !important; transition: 0.2s !important; }
+.online-channel .channel-info a:hover { color: #26d8a9 !important; text-decoration: none !important; }
 
 .offline-channel:hover { box-shadow: 0px 0px 63px -4px #ff2162; }
 .offline-channel .status-icon { padding: 5px 8px; border-radius: 50%; background-color: #ff2162; }
+.offline-channel .channel-info a { -webkit-transition: 0.2s !important; transition: 0.2s !important; }
+.offline-channel .channel-info a:hover { color: #ff2162 !important; text-decoration: none !important; }

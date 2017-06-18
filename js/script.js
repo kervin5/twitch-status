@@ -1,7 +1,7 @@
 //Javascript
 //channel endpoint https://api.twitch.tv/kraken/channels/
 //stream endpoint https://api.twitch.tv/kraken/streams/
-var channels = ["streamerhouse","sodapoppin","summit1g","esltv_cs","nightblue3","imaqtpie", "OgamingSC2", "cretetion", "freecodecamp", "habathcx", "RobotCaleb", "noobs2ninjas"];
+var channels = ["streamerhouse","tumbalacasasss","sodapoppin","summit1g","esltv_cs","nightblue3","imaqtpie", "OgamingSC2", "cretetion", "freecodecamp", "habathcx", "RobotCaleb", "noobs2ninjas"];
 
 var unknownChannel = {
 
@@ -90,16 +90,23 @@ function getChannels(channels) {
 
 getChannels(channels);
 
-$("#online-btn").click(function () {
+
+$("#online-btn").click(function (button) {
+    $(".filter").removeClass("active");
+    $(this).addClass("active");
     $(".online-channel").parent().show();
     $(".offline-channel").parent().hide();
 });
 
-$("#offline-btn").click(function () {
+$("#offline-btn").click(function (button) {
+    $(".filter").removeClass("active");
+    $(this).addClass("active");
     $(".offline-channel").parent().show();
     $(".online-channel").parent().hide();
 });
 
-$("#all-btn").click(function () {
+$("#all-btn").click(function (button) {
+    $(".filter").removeClass("active");
+    $(this).addClass("active");
     $(".channel-container").parent().show();
 });

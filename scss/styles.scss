@@ -110,11 +110,21 @@ body {
 
   .active {
 
-    background: linear-gradient(top, #ff2162 1000%, #ff2162 100%);
+    background: linear-gradient(top, #f4cb42 60%, #541e00 140%);
 
     box-shadow: -1px 2px 20px 9px rgba(0,0,0,0.5);
     z-index: 2;
   }
+
+
+}
+
+#online-btn.active{
+  background: linear-gradient(top, #26d8a9 100%, #26d8a9 100%);
+}
+
+#offline-btn.active{
+  background: linear-gradient(top, #ff2162 1000%, #ff2162 100%);
 }
 
 @keyframes marquee {
@@ -131,7 +141,12 @@ body {
         margin: auto;
         position: relative;
         overflow: hidden;
-        transition: 0.5s;
+        transition: 0.3s;
+
+        &:hover{
+          transform: scale(1.1);
+          z-index: 100;
+        }
 
         .status-icon {
           position: absolute;
@@ -194,6 +209,17 @@ body {
     border-radius: 50%;
     background-color:#26d8a9;
   }
+
+  .channel-info {
+
+    a {
+      transition: 0.2s !important;
+      &:hover {
+        color:#26d8a9 !important;
+        text-decoration: none !important;
+      }
+    }
+  }
 }
 
 .offline-channel {
@@ -206,5 +232,16 @@ body {
     padding: 5px 8px;
     border-radius: 50%;
     background-color:#ff2162;
+  }
+
+  .channel-info {
+
+    a {
+      transition: 0.2s !important;
+      &:hover {
+        color:#ff2162 !important;
+        text-decoration: none !important;
+      }
+    }
   }
 }

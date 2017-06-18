@@ -1,6 +1,6 @@
 # Twitch Status
 
-## Frontend Project - REST API
+## Frontend Project - Twitch REST API
 
 ### Multiple API implementation
 
@@ -17,4 +17,4 @@ This is a front-end project built with vanilla HTML and CSS. It fetches a list o
 
 * AJAX/JSON
 
-* Restful APIs
+* Restful API
