@@ -1,3 +1,5 @@
+* { color: white; }
+
 body { background-color: #090b24; }
 
 .navbar-inverse { color: white; border-radius: 0; border: none; white-space: nowrap; word-break: keep-all; background: #020726; background: -webkit-gradient(left top, right top, color-stop(0%, #020726), color-stop(51%, #21264e), color-stop(100%, #020726)); background: -webkit-linear-gradient(left, #020726 0%, #21264e 51%, #020726 100%); background: linear-gradient(to right, #020726 0%, #21264e 51%, #020726 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020726', endColorstr='#020726', GradientType=1 ); }
@@ -18,4 +20,5 @@ body { background-color: #090b24; }
 .filters .active { background: -webkit-linear-gradient(top, #ff2162 1000%, #ff2162 100%); background: linear-gradient(top, #ff2162 1000%, #ff2162 100%); box-shadow: -1px 2px 20px 9px rgba(0, 0, 0, 0.5); z-index: 2; }
 
 #channels-container #channels > div { padding: 20px; }
-#channels-container #channels > div .channel-container { background-color: white; width: 100%; height: 300px; margin: auto; counter-reset: red; }
+#channels-container #channels > div .channel-container { width: 100%; margin: auto; }
+#channels-container #channels > div .channel-container .img-responsive { background-color: #0f0c16; }

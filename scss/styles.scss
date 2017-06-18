@@ -1,5 +1,9 @@
 //General Styling
 
+* {
+  color: white;
+}
+
 body {
   background-color: #090b24;
 }
@@ -117,11 +121,11 @@ body {
     &>div {
       padding: 20px;
       .channel-container {
-        background-color: white;
         width: 100%;
-        height: 300px;
         margin: auto;
-        counter-reset:red;
+        .img-responsive {
+          background-color: #0f0c16;
+        }
       }
     }
 
