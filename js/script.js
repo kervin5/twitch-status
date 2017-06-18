@@ -1,10 +1,13 @@
 //Javascript
 //channel endpoint https://api.twitch.tv/kraken/channels/
 //stream endpoint https://api.twitch.tv/kraken/streams/
-var channels = ["streamerhouse","tumbalacasasss","sodapoppin","summit1g","esltv_cs","nightblue3","imaqtpie", "OgamingSC2", "cretetion", "freecodecamp", "habathcx", "RobotCaleb", "noobs2ninjas"];
+var channels = ["streamerhouse","Nicaragua505","sodapoppin","summit1g","esltv_cs","nightblue3","imaqtpie", "OgamingSC2", "cretetion", "freecodecamp", "habathcx", "RobotCaleb", "noobs2ninjas","freecoderails"];
 
 var unknownChannel = {
-
+    "logo" : "images/404channel.png",
+    "display_name": "Unknown",
+    "url": "",
+    "status": "This channel doesn't exist please try another one"
 };
 
 function displayChannel(channelRes) {
@@ -78,6 +81,9 @@ function getChannelInfo(channelName)
         displayChannel(channel);
         checkOnlineStatus(channel.display_name);
     }).fail(function (data) {
+        unknownChannel.display_name = channelName;
+        displayChannel(unknownChannel);
+        checkOnlineStatus(unknownChannel.display_name);
         console.log("Error",data);
     });
 }
