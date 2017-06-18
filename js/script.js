@@ -142,8 +142,8 @@ $( "#search-form" ).submit(function( event ) {
 
     //Empties current channels
     $("#channels").empty();
-    $(".search-btn").hide();
-    $(".clear-btn").show();
+    $(".search-btn").toggleClass("hidden-btn");
+    $(".clear-btn").toggleClass("hidden-btn");
 
     //Queries channel from input
     getChannels(channel);
@@ -155,8 +155,8 @@ $( "#search-form" ).submit(function( event ) {
 $(".clear-btn").click(function () {
     $("#srch-term").val("");
     $("#channels").empty();
-    $(".search-btn").show();
-    $(".clear-btn").hide();
+    $(".search-btn").toggleClass("hidden-btn");
+    $(".clear-btn").toggleClass("hidden-btn");
     getChannels(channels);
 });
 
