@@ -1,23 +1,71 @@
 //Javascript
 //channel endpoint https://api.twitch.tv/kraken/channels/
 //stream endpoint https://api.twitch.tv/kraken/streams/
-var channels = ["streamerhouse","riotgames","summit1g","esltv_cs","nightblue3","imaqtpie", "OgamingSC2", "cretetion", "freecodecamp", "habathcx", "RobotCaleb", "noobs2ninjas"];
+var channels = ["streamerhouse","sodapoppin","summit1g","esltv_cs","nightblue3","imaqtpie", "OgamingSC2", "cretetion", "freecodecamp", "habathcx", "RobotCaleb", "noobs2ninjas"];
 
-function displayChannel(channelRes,channelName) {
-    var channelInfo = "<div class='status-icon'>%status%</div><div class='channel-info'><h3>%name%</h3><div class='status-detail'><p>%detail%</p></div></div>";
+var unknownChannel = {
+
+};
+
+function displayChannel(channelRes) {
+    var channelInfo = "<div class='channel-info'><a href='%url%'><h3>%name%</h3></a><div class='status-detail'><p>%detail%</p></div></div>";
     var channelRow = " <div class='col-xs-6 col-sm-4 col-md-3 '> <div class='channel-container' id='%id%'><img src='%img%' alt='logo' class='img-responsive'/></div> </div>";
 
     channelRow = channelRow.replace("%img%",channelRes.logo);
-    channelRow = channelRow.replace("%id%",channelName);
+    channelRow = channelRow.replace("%id%",channelRes.display_name);
 
-    channelInfo = channelInfo.replace("%name%",channelName);
+    channelInfo = channelInfo.replace("%name%",channelRes.display_name);
+    channelInfo = channelInfo.replace("%url%",channelRes.url);
     channelInfo = channelInfo.replace("%detail%",channelRes.status);
 
     $("#channels").append(channelRow);
-    $("#"+ channelName).prepend(channelInfo);
+    $("#"+ channelRes.display_name).prepend(channelInfo);
+}
+
+function displayStatus(channelStatus, channelName) {
+    var channel = $("#"+channelName);
+
+    var onlineIcon = " <i class='fa fa-eye' aria-hidden='true'></i>";
+    var offlineIcon = "<i class='fa fa-eye-slash' aria-hidden='true'></i>";
+
+    var statusInfo = "<div class='status-icon'>%status%</div>";
+
+    if(channelStatus === "online") {
+        channel.addClass("online-channel");
+        statusInfo = statusInfo.replace("%status%",onlineIcon);
+
+    } else {
+        channel.addClass("offline-channel");
+        statusInfo = statusInfo.replace("%status%",offlineIcon);
+    }
+    channel.prepend(statusInfo);
+
+
 }
 
 function checkOnlineStatus(channelName)
+{
+    $.ajax({
+        url: "https://api.twitch.tv/kraken/streams/"+channelName,
+        dataType: 'json',
+        headers: {
+            'Client-ID': "7buzh4k369ta1n0se34wbn8aj2b7jr"
+        }
+    }).done(function (channel) {
+        console.log(channel);
+        if (channel["stream"] === null)
+        {
+            displayStatus("offline",channelName);
+        } else {
+           //displayChannel(channel,channelName);
+            displayStatus("online",channelName);
+        }
+    }).fail(function (data) {
+        console.log("Error",data);
+    });
+}
+
+function getChannelInfo(channelName)
 {
     $.ajax({
         url: "https://api.twitch.tv/kraken/channels/"+channelName,
@@ -27,22 +75,16 @@ function checkOnlineStatus(channelName)
         }
     }).done(function (channel) {
         console.log(channel);
-        if (channel["stream"] === null)
-        {
-            alert(channel+" is not online");
-        } else {
-            //alert(channel+" is online!");
-            displayChannel(channel,channelName);
-        }
+        displayChannel(channel);
+        checkOnlineStatus(channel.display_name);
     }).fail(function (data) {
         console.log("Error",data);
     });
 }
 
-
 function getChannels(channels) {
     for(var i = 0; i < channels.length; i++){
-        checkOnlineStatus(channels[i]);
+        getChannelInfo(channels[i]);
     }
 }
 

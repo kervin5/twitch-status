@@ -2,7 +2,7 @@
 
 * {
   color: white;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 body {
@@ -131,6 +131,7 @@ body {
         margin: auto;
         position: relative;
         overflow: hidden;
+        transition: 0.5s;
 
         .status-icon {
           position: absolute;
@@ -146,6 +147,14 @@ body {
           left: 0;
           right: 0;
 
+          a {
+            color: white;
+            h3 {
+              margin-top: 0;
+            }
+          }
+
+
           .status-detail {
             width: 100%;
             margin: 0 auto;
@@ -157,6 +166,10 @@ body {
               display: inline-block;
               padding-left: 100%;  /* show the marquee just outside the paragraph */
               animation: marquee 15s linear infinite;
+
+              &:hover {
+                animation-play-state: paused
+              }
             }
           }
         }
@@ -167,5 +180,31 @@ body {
       }
     }
 
+  }
+}
+
+.online-channel {
+  &:hover {
+    -webkit-box-shadow: 0px 0px 63px -4px rgba(13,219,154,1);
+    -moz-box-shadow: 0px 0px 63px -4px rgba(13,219,154,1);
+    box-shadow: 0px 0px 63px -4px rgba(13,219,154,1);
+  }
+  .status-icon {
+    padding: 5px 8px;
+    border-radius: 50%;
+    background-color:#26d8a9;
+  }
+}
+
+.offline-channel {
+  &:hover {
+    -webkit-box-shadow: 0px 0px 63px -4px rgba(255,33,98,1);
+    -moz-box-shadow: 0px 0px 63px -4px rgba(255,33,98,1);
+    box-shadow: 0px 0px 63px -4px rgba(255,33,98,1);
+  }
+  .status-icon {
+    padding: 5px 8px;
+    border-radius: 50%;
+    background-color:#ff2162;
   }
 }
