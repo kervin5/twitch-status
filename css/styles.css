@@ -1,4 +1,4 @@
-* { color: white; }
+* { color: white; -webkit-transition: 0.5s; transition: 0.5s; }
 
 body { background-color: #090b24; }
 
@@ -19,6 +19,15 @@ body { background-color: #090b24; }
 .filters .filter:hover { z-index: 3; -webkit-transform: scale(1.1, 1.1); transform: scale(1.1, 1.1); -webkit-transition: boder 0.1s; transition: boder 0.1s; border: none; box-shadow: -1px 2px 20px 9px rgba(0, 0, 0, 0.5); }
 .filters .active { background: -webkit-linear-gradient(top, #ff2162 1000%, #ff2162 100%); background: linear-gradient(top, #ff2162 1000%, #ff2162 100%); box-shadow: -1px 2px 20px 9px rgba(0, 0, 0, 0.5); z-index: 2; }
 
+@-webkit-keyframes marquee { 0% { -webkit-transform: translate(0, 0); transform: translate(0, 0); }
+  100% { -webkit-transform: translate(-100%, 0); transform: translate(-100%, 0); } }
+
+@keyframes marquee { 0% { -webkit-transform: translate(0, 0); transform: translate(0, 0); }
+  100% { -webkit-transform: translate(-100%, 0); transform: translate(-100%, 0); } }
 #channels-container #channels > div { padding: 20px; }
-#channels-container #channels > div .channel-container { width: 100%; margin: auto; }
+#channels-container #channels > div .channel-container { width: 100%; margin: auto; position: relative; overflow: hidden; }
+#channels-container #channels > div .channel-container .status-icon { position: absolute; top: 10px; right: 10px; }
+#channels-container #channels > div .channel-container .channel-info { background-color: rgba(15, 12, 22, 0.5); position: absolute; padding: 10px; bottom: 0; left: 0; right: 0; }
+#channels-container #channels > div .channel-container .channel-info .status-detail { width: 100%; margin: 0 auto; white-space: nowrap; overflow: hidden; box-sizing: border-box; }
+#channels-container #channels > div .channel-container .channel-info .status-detail p { display: inline-block; padding-left: 100%; /* show the marquee just outside the paragraph */ -webkit-animation: marquee 15s linear infinite; animation: marquee 15s linear infinite; }
 #channels-container #channels > div .channel-container .img-responsive { background-color: #0f0c16; }

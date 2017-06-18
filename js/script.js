@@ -4,11 +4,17 @@
 var channels = ["streamerhouse","riotgames","summit1g","esltv_cs","nightblue3","imaqtpie", "OgamingSC2", "cretetion", "freecodecamp", "habathcx", "RobotCaleb", "noobs2ninjas"];
 
 function displayChannel(channelRes,channelName) {
-    var channelInfo = "<div></div>";
-    var channelRow = " <div class='col-xs-6 col-sm-3 col-md-2'> <div class='channel-container' id='%id%'><img src='%img%' alt='logo' class='img-responsive'/></div> </div>";
+    var channelInfo = "<div class='status-icon'>%status%</div><div class='channel-info'><h3>%name%</h3><div class='status-detail'><p>%detail%</p></div></div>";
+    var channelRow = " <div class='col-xs-6 col-sm-4 col-md-3 '> <div class='channel-container' id='%id%'><img src='%img%' alt='logo' class='img-responsive'/></div> </div>";
+
     channelRow = channelRow.replace("%img%",channelRes.logo);
     channelRow = channelRow.replace("%id%",channelName);
+
+    channelInfo = channelInfo.replace("%name%",channelName);
+    channelInfo = channelInfo.replace("%detail%",channelRes.status);
+
     $("#channels").append(channelRow);
+    $("#"+ channelName).prepend(channelInfo);
 }
 
 function checkOnlineStatus(channelName)
