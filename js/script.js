@@ -14,12 +14,22 @@ function displayChannel(channelRes) {
     var channelInfo = "<div class='channel-info'><a href='%url%'><h3>%name%</h3></a><div class='status-detail'><p>%detail%</p></div></div>";
     var channelRow = " <div class='col-xs-6 col-sm-4 col-md-3 '> <div class='channel-container' id='%id%'><img src='%img%' alt='logo' class='img-responsive'/></div> </div>";
 
-    channelRow = channelRow.replace("%img%",channelRes.logo);
+    if(channelRes.logo){
+        channelRow = channelRow.replace("%img%",channelRes.logo);
+    } else {
+        channelRow = channelRow.replace("%img%",unknownChannel.logo);
+    }
     channelRow = channelRow.replace("%id%",channelRes.display_name);
 
     channelInfo = channelInfo.replace("%name%",channelRes.display_name);
     channelInfo = channelInfo.replace("%url%",channelRes.url);
-    channelInfo = channelInfo.replace("%detail%",channelRes.status);
+
+    if(channelRes.status) {
+        channelInfo = channelInfo.replace("%detail%",channelRes.status);
+    } else {
+        channelInfo = channelInfo.replace("%detail%","This channel doesn't have a description");
+    }
+
 
     $("#channels").append(channelRow);
     $("#"+ channelRes.display_name).prepend(channelInfo);
@@ -94,9 +104,6 @@ function getChannels(channels) {
     }
 }
 
-getChannels(channels);
-
-
 $("#online-btn").click(function (button) {
     $(".filter").removeClass("active");
     $(this).addClass("active");
@@ -116,3 +123,19 @@ $("#all-btn").click(function (button) {
     $(this).addClass("active");
     $(".channel-container").parent().show();
 });
+
+
+$( "#search-form" ).submit(function( event ) {
+    channel = [];
+    var query = $("#srch-term").val();
+    channel.push(query);
+
+    $("#channels").empty();
+
+    getChannels(channel);
+
+    console.log(query);
+    event.preventDefault();
+});
+
+getChannels(channels);
