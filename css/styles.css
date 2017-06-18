@@ -11,7 +11,10 @@ body { background-color: #090b24; }
 .navbar-inverse .navbar-right > li:hover { margin-bottom: -3px; border-bottom: 3px solid #BD3C6B; }
 
 #search-form { padding-left: 0; }
+#search-form .add-on { position: absolute; left: 0; }
 
+@media (max-width: 768px) { #search-form .add-on { width: 95%; left: 2.5%; }
+  .filter { margin-top: 40px !important; } }
 .filters { text-align: center; }
 .filters .filter { position: relative; -webkit-transition: 0.5s; transition: 0.5s; z-index: 1; /* Webkit (Chrome 11+) */ background: -webkit-linear-gradient(top, #21264e 0%, #042155 100%); background: linear-gradient(top, #21264e 0%, #042155 100%); padding: 5px; text-decoration: none; color: white; }
 .filters .filter .fa { font-size: 1.5em; }
@@ -40,7 +43,7 @@ body { background-color: #090b24; }
 #channels-container #channels > div .channel-container .channel-info .status-detail { width: 100%; margin: 0 auto; white-space: nowrap; overflow: hidden; box-sizing: border-box; }
 #channels-container #channels > div .channel-container .channel-info .status-detail p { display: inline-block; padding-left: 100%; /* show the marquee just outside the paragraph */ -webkit-animation: marquee 15s linear infinite; animation: marquee 15s linear infinite; }
 #channels-container #channels > div .channel-container .channel-info .status-detail p:hover { -webkit-animation-play-state: paused; animation-play-state: paused; }
-#channels-container #channels > div .channel-container .img-responsive { background-color: #0f0c16; }
+#channels-container #channels > div .channel-container .img-responsive { background-color: #0f0c16; margin: auto; }
 
 .online-channel:hover { box-shadow: 0px 0px 63px -4px #0ddb9a; }
 .online-channel .status-icon { padding: 5px 8px; border-radius: 50%; background-color: #26d8a9; }

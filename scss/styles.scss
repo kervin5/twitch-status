@@ -65,6 +65,24 @@ body {
 
 #search-form {
  padding-left: 0;
+  .add-on {
+    position: absolute;
+    left: 0;
+  }
+}
+
+
+@media (max-width: 768px) {
+  #search-form {
+    .add-on {
+     width: 95%;
+      left: 2.5%;
+    }
+  }
+
+  .filter {
+    margin-top: 40px !important;
+  }
 }
 
 
@@ -198,6 +216,7 @@ body {
 
         .img-responsive {
           background-color: #0f0c16;
+          margin: auto;
         }
       }
     }
